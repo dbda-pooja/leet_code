@@ -8,10 +8,8 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
 
-        nums1 = nums1[0:m]
-        nums2 = nums2[0:n]
-    
-        nums1 = nums1+nums2
+        for i in range(0,n):
+            nums1[m+i]=nums2[i]
         temp = 0
         for i in range(0,len(nums1)):
             for j in range(i+1,len(nums1)):
