@@ -17,7 +17,7 @@ class Solution(object):
                 k[nums[j]] = 1
                 nums[index] = nums[j]
                 index = index + 1
-        return nums
+        return index
 
         
 
