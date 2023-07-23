@@ -8,13 +8,14 @@ class Solution(object):
         merge_string = ""
         n = len(word1)
         m = len(word2)
-        i=0
+        i = 0
         j = 0
         
         if (len(word1) == len(word2)):
             while (i<m) and (j<n):
-                merge_string = merge_string + word1[i] + word2[i]
+                merge_string = merge_string + word1[i] + word2[j]
                 i = i+1
+                j = j+1
         elif(len(word1)< len(word2)):
             while (i<m) and (j<n):
                 merge_string = merge_string + word1[j] + word2[i]
