@@ -31,3 +31,15 @@ Select case
         else "Scalene"
     END 
     from TRIANGLES;
+
+/*
+Problem:
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+*/
+Answer:
+Select sum(CITY.POPULATION) from COUNTRY 
+INNER JOIN CITY
+ ON COUNTRY.CODE = CITY.COUNTRYCODE
+where COUNTRY.CONTINENT = "Asia";

@@ -5,31 +5,29 @@ class Solution(object):
         :type str2: str
         :rtype: str
         """
-        gcd_string = ""
-        n = len(str1)
-        m = len(str2)
-        i = 0
-        j = 0
-        while (i<n) and (j<m):
-            if(n <= m):
+        s1 = max(str1, str2, key = lambda x: len(x))
+        s2 = str1
+        if s1 == str1:
+            s2 = str2
+        a1, a2 = len(s1), len(s2)
 
-                if (str1[i] == str2[j]):
-                    gcd_string = gcd_string + str1[i]
-                else:
-                    break
-            else :
-                if (str1[i] == str2[j]):
-                    gcd_string = gcd_string + str1[j]
-                else:
-                    break
+        if s2 * (a1//a2) == s1:
+            return s2
+        
+        for i in range(2, a2//2 + 1):
+            if (a2 / i) % 1 == 0:
+                if s2[:a2//i]*i == s2:
+                    if s1[:a2//i]*int(i*a1/a2) == s1:
+                        return s2[:a2//i]
 
-            i = i+1
-            j = j+1
-        return gcd_string
+        if s1.count(s1[0]) == a1:
+            if s2.count(s2[0]) == a2:
+                if s1[0] == s2[0]:
+                    return s1[0]
 
-
+        return ''
 
 
 if __name__=="__main__":
     s = Solution()
-    print(s.gcdOfStrings("ABABAB","ABACABAB"))
+    print(s.gcdOfStrings("ABABAB","ABABABAB"))
