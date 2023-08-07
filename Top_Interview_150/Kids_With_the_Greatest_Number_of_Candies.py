@@ -7,6 +7,16 @@ class Solution(object):
         """
 
 
+        maximum_candy = max(candies)
+        output = []
+        
+        for i in candies :
+            total_candis = i + extraCandies
+            output.append(total_candis>=maximum_candy)
+        return output
+            
+
+
 if __name__=="__main__":
     s = Solution()
-    print(s.kidsWithCandies("ABABAB","ABABABAB"))
+    print(s.kidsWithCandies([4,2,1,1,2],1))
