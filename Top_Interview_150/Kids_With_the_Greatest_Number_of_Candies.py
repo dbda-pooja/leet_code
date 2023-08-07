@@ -5,3 +5,8 @@ class Solution(object):
         :type extraCandies: int
         :rtype: List[bool]
         """
+
+
+if __name__=="__main__":
+    s = Solution()
+    print(s.kidsWithCandies("ABABAB","ABABABAB"))
