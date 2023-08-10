@@ -48,4 +48,4 @@ class Solution(object):
 
 if __name__== "__main__":
     s = Solution()
-    print(s.canPlaceFlowers([0,0,1,0,0],1))
+    print(s.canPlaceFlowers([0,0,1,0,0,0,1],2))
