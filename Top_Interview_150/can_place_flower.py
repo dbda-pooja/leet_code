@@ -5,35 +5,15 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        flowerbed_len  = len(flowerbed)
-       
-        for i in range (0,flowerbed_len) :
-            if(n != 0):
-                if flowerbed[0] == 0:
-                    if flowerbed_len == 1:
-                        flowerbed[0] = 1
-                        n = n-1
-                    else:
-                        if flowerbed[1] == 0:
-                            flowerbed[0] = 1
-                            n = n-1
-                        
-        
-                elif flowerbed[i] == 0 :
-                    if (flowerbed[i-1] == 0 and flowerbed[i+1]==0) :
-                        flowerbed[i] = 1
-                        n = n-1
-
-                elif flowerbed[flowerbed_len-1] == 0:
-                    if flowerbed[flowerbed_len-2] == 0:
-                        flowerbed[flowerbed_len-1] = 1
-                        n = n-1
-                    
-                
-        if (n == 0):
+        if n == 0:
             return True
-        else :
-            return False
+        for i in range(len(flowerbed)):
+            if flowerbed[i] == 0 and (i == 0 or flowerbed[i-1] == 0) and (i == len(flowerbed)-1 or flowerbed[i+1] == 0):
+                flowerbed[i] = 1
+                n -= 1
+                if n == 0:
+                    return True
+        return False
 
         
             
